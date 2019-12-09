@@ -10,6 +10,7 @@ package Model;
  * @author hieule
  */
 public class Manga {
+    private int id;
     private String mangaName;
     private float price;
     private String des;
@@ -24,6 +25,24 @@ public class Manga {
         this.des = des;
         this.authorName = authorName;
     }
+
+    public Manga(int id, String mangaName, float price, String des, String authorName) {
+        this.id = id;
+        this.mangaName = mangaName;
+        this.price = price;
+        this.des = des;
+        this.authorName = authorName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
 
     public String getMangaName() {
         return mangaName;

@@ -9,12 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>add manga</title>
+        <title>${param["header"]}</title>
         <%@include file="header.jsp" %>
     </head>
     <body>
-        <h1>Add Manga</h1>
+        <h1>${param["header"]}</h1>
         <br>
+        <form action="${pageContext.request.contextPath}/viewMangaServlet" method="post">
+            <input type="submit" name="back" value="back" />
+        </form>
         <br>
         <script>
             function checkform(form) {
@@ -33,26 +36,28 @@
                 return true;
             }
         </script>
-        <form action="" method="post" onsubmit="return checkform(this)">
+        <form action="${pageContext.request.contextPath}/UpdateMangaServlet" 
+              method="post" onsubmit="return checkform(this)">
             <table>
                 <tr>
                     <td align="right">manga name</td>
-                    <td><input type="text" name="manga_name" required/></td>
+                    <td><input type="text" name="manga_name" value="${param["manga_name"]}" required/></td>
                 </tr>
                 <tr>
                     <td align="right">price:</td>
-                    <td><input type="text" name="manga_price" required/></td>
+                    <td><input type="text" name="manga_price" value="${param["price"]}" required/></td>
                 </tr>
                 <tr>
                     <td align="right">description:</td>
-                    <td><input type="text" name="manga_des"/></td>
+                    <td><input type="text" name="manga_des" value="${param["des"]}" /></td>
                 </tr>
                 <tr>
                     <td align="right">author name:</td>
-                    <td><input type="text" name="author_name" required/></td>
+                    <td><input type="text" name="author_name" value="${param["author_name"]}" required/></td>
                 </tr>
+                <input type="hidden" name="manga_id" value="${param["manga_id"]}"/>
             </table>
-            <input class="submit" type="submit" name="addManga" value="Add"/>
+            <input class="submit" type="submit" name="update" value="${param["button"]}"/>
         </form>
         
         

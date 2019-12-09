@@ -16,7 +16,10 @@ and open the template in the editor.
         <br>
         <br>
         <!--<p><%=getServletContext().getMajorVersion() %>.<%=getServletContext().getMinorVersion()%></p>-->
-        <a href="/Manga/viewManga.jsp">View manga</a>
+        <!--<a href="/Manga/viewManga.jsp">View manga</a>-->
+        <form action = "${pageContext.request.contextPath}/viewMangaServlet" method="post">
+            <input type="submit" name="viewManga" value="view manga"/>
+        </form>
         <br>
         <%@ include file="footer.jsp" %>
     </body>
